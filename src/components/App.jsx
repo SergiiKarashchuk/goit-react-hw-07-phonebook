@@ -25,8 +25,8 @@ export default function App() {
     );
   }
 
-  function checkСontact(newName) {
-    return contacts.some(contact => contact.name === newName);
+  function checkСontact(newNumber) {
+    return contacts.some(contact => contact.phone === newNumber);
   }
 
   function onSubmit(name, phone) {
