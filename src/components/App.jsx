@@ -46,13 +46,11 @@ export default function App() {
       <Form onSubmit={onSubmit} />
       <h2>Contacts</h2>
       {isLoading && !error && <b>Request in progress...</b>}
-      {contacts.length !== 0 ? (
+      {contacts.length !== 0 && (
         <>
           <Filter />
           <ContactsList />
         </>
-      ) : (
-        <p>Contacts list is empty</p>
       )}
 
       {/* 
