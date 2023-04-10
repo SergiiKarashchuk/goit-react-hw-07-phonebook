@@ -2,7 +2,6 @@ import ContactItem from 'components/ContactListItem';
 import { Item, List, Wrapper } from './ContactsList.styled';
 import { useSelector } from 'react-redux';
 import { selectContactByName, selectIsLoading } from 'redux/selectors';
-import Filter from 'components/Filter';
 
 const ContactsList = () => {
   const contacts = useSelector(selectContactByName);
