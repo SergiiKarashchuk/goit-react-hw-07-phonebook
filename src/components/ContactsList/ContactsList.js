@@ -12,7 +12,6 @@ const ContactsList = () => {
     <Wrapper>
       {contacts.length > 0 && (
         <>
-          <Filter />
           <List>
             {contacts.map(contact => (
               <Item key={contact.id}>

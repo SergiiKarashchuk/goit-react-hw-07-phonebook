@@ -6,6 +6,7 @@ import { AppBox } from './App.styled';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactsList from './ContactsList';
+import Filter from './Filter';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function App() {
@@ -45,11 +46,18 @@ export default function App() {
       <Form onSubmit={onSubmit} />
       <h2>Contacts</h2>
       {isLoading && !error && <b>Request in progress...</b>}
+      {contacts.length !== 0 ? (
+        <>
+          <Filter />
+          <ContactsList />
+        </>
+      ) : (
+        <p>Contacts list is empty</p>
+      )}
 
       {/* 
       {!isLoading && contacts.length === 0 && <p>Contacts list is empty</p>} */}
       {error && <p>Something went wrong, please try again later</p>}
-      <ContactsList />
     </AppBox>
   );
 }
